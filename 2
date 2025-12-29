@@ -1,0 +1,178 @@
+/* ======================================================
+   BASE VARIABLES
+   ====================================================== */
+
+:root {
+  /* Dark */
+  --dark-bg: transparent;
+  --dark-layer1: 255,255,255;
+  --dark-flyout: rgba(30,30,30,0.95);
+  --dark-select: 255,255,255;
+  --dark-accent: rgb(20,20,20);
+  --dark-accent-hovered: rgb(35,35,35);
+  --dark-button: rgb(45,45,45);
+  --dark-button-border: rgb(60,60,60);
+  --dark-dm-about: rgba(0,0,0,0.4);
+  --dark-status-panel: rgba(30,30,30,0.45);
+
+  /* Light */
+  --light-bg: transparent;
+  --light-layer1: 255,255,255;
+  --light-flyout: rgba(255,255,255,0.95);
+  --light-select: 0,0,0;
+  --light-accent: rgb(0,120,212);
+  --light-accent-hovered: rgb(0,94,167);
+  --light-button: rgb(251,251,251);
+  --light-button-border: rgb(204,204,231);
+  --light-dm-about: rgba(255,255,255,0.35);
+  --light-status-panel: rgba(255,255,255,0.45);
+
+  /* fallback */
+  --status-panel: var(--light-status-panel);
+}
+
+/* ======================================================
+   THEME MAP
+   ====================================================== */
+
+.theme-dark {
+  --app-bg: var(--dark-bg);
+  --background-primary: rgba(var(--dark-layer1),0.05);
+  --background-secondary: rgba(var(--dark-layer1),0.05);
+  --background-tertiary: rgba(var(--dark-layer1),0.06);
+  --background-floating: var(--dark-flyout);
+  --background-modifier-hover: rgba(var(--dark-select),0.05);
+  --background-modifier-active: rgba(var(--dark-select),0.07);
+  --background-modifier-selected: rgba(var(--dark-select),0.07);
+  --channeltextarea-background: rgba(var(--dark-layer1),0.05);
+  --accent: var(--dark-accent);
+  --accent-hovered: var(--dark-accent-hovered);
+  --button: var(--dark-button);
+  --button-border: var(--dark-button-border);
+  --dm-about: var(--dark-dm-about);
+  --status-panel: var(--dark-status-panel);
+}
+
+.theme-light {
+  --app-bg: var(--light-bg);
+  --background-primary: rgba(var(--light-layer1),0.7);
+  --background-secondary: rgba(var(--light-layer1),0.7);
+  --background-tertiary: rgba(var(--light-layer1),0.7);
+  --background-floating: var(--light-flyout);
+  --background-modifier-hover: rgba(var(--light-select),0.05);
+  --background-modifier-active: rgba(var(--light-select),0.07);
+  --background-modifier-selected: rgba(var(--light-select),0.07);
+  --channeltextarea-background: rgba(var(--light-layer1),0.4);
+  --accent: var(--light-accent);
+  --accent-hovered: var(--light-accent-hovered);
+  --button: var(--light-button);
+  --button-border: var(--light-button-border);
+  --dm-about: var(--light-dm-about);
+  --status-panel: var(--light-status-panel);
+}
+
+/* ======================================================
+   HARD RESET – DISCORD NEW UI OVERRIDE
+   ====================================================== */
+
+/* NU scoate blocul ăsta */
+.visual-refresh {
+  --background-primary: transparent !important;
+  --background-secondary: transparent !important;
+  --background-tertiary: transparent !important;
+  --background-base-low: transparent !important;
+  --bg-base-primary: transparent !important;
+}
+
+/* ======================================================
+   TRANSPARENCY – NEW UI
+   ====================================================== */
+
+.visual-refresh .app__160d8,
+.visual-refresh .bg__960e4,
+.visual-refresh .appMount__51fd7,
+.visual-refresh .wrapper_ef3116,
+.visual-refresh .chat_f75fb0,
+.visual-refresh .chatContent_f75fb0,
+.visual-refresh .scroller__99e7c,
+.visual-refresh .privateChannels_e6b769,
+.visual-refresh .container__2637a,
+.visual-refresh .sidebar__5e434,
+.visual-refresh .nowPlayingColumn__133bf,
+.visual-refresh .themed__9293f,
+.visual-refresh .layer__960e4,
+.visual-refresh .contentRegion__23e6b,
+.visual-refresh .standardSidebarView__23e6b {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* ======================================================
+   TRANSPARENCY – OLD UI FALLBACK
+   ====================================================== */
+
+.app__160d8,
+.bg__960e4,
+.appMount__51fd7,
+.chat_f75fb0,
+.chatContent_f75fb0,
+.scroller__99e7c,
+.privateChannels_e6b769,
+.container__2637a,
+.sidebar__5e434,
+.nowPlayingColumn__133bf,
+.themed__9293f {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* ======================================================
+   STATUS / USER PANEL (IMPORTANT)
+   ====================================================== */
+
+.panels__5e434,
+.container__37e49 {
+  background: var(--status-panel) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* ======================================================
+   CHAT INPUT
+   ====================================================== */
+
+.channelTextArea_f75fb0 {
+  background-color: var(--channeltextarea-background) !important;
+}
+
+/* ======================================================
+   FLYOUTS / MENUS
+   ====================================================== */
+
+.menu_c1e9c4,
+.popout__3f413,
+.quickswitcher_ac6cb0,
+.messagesPopoutWrap_e8b59c {
+  background-color: var(--background-floating) !important;
+}
+
+/* ======================================================
+   MISC
+   ====================================================== */
+
+.overlayBackground_c69a7b {
+  background-color: var(--dm-about) !important;
+}
+
+.sidebarListRounded__5e434 {
+  backdrop-filter: none !important;
+}
+
+body {
+  background-color: var(--app-bg) !important;
+}
+
+/* discord bug */
+.app_a3002d {
+  color: transparent;
+}
